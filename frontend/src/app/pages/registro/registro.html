@@ -1,0 +1,24 @@
+<form class="form-panel" [formGroup]="registerForm" (ngSubmit)="submit()">
+  <h2>Crear cuenta</h2>
+  <div class="input-group">
+    <label for="reg-username">Nombre de usuario</label>
+    <input id="reg-username" type="text" formControlName="username" placeholder="usuario123" />
+  </div>
+  <div class="input-group">
+    <label for="reg-name">Nombre</label>
+    <input id="reg-name" type="text" formControlName="name" placeholder="Tu nombre" />
+  </div>
+  <div class="input-group">
+    <label for="reg-email">Correo electrónico</label>
+    <input id="reg-email" type="email" formControlName="email" placeholder="correo@ejemplo.com" />
+  </div>
+  <div class="input-group">
+    <label for="reg-password">Contraseña</label>
+    <input id="reg-password" type="password" formControlName="password" placeholder="••••••••" />
+  </div>
+  <div class="input-group">
+    <label for="reg-confirm">Confirmar contraseña</label>
+    <input id="reg-confirm" type="password" formControlName="confirmPassword" placeholder="••••••••" />
+  </div>
+  <button type="submit" class="submit-btn">Registrarse</button>
+</form>

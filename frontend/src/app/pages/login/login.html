@@ -1,0 +1,34 @@
+<div class="login-page">
+  <div class="login-card">
+    <div class="toggle-container">
+      <div class="toggle-slider" [class.slide-right]="!isLogin()"></div>
+      <button class="toggle-btn" [class.active]="isLogin()" (click)="isLogin() || toggleMode()">
+        Iniciar Sesión
+      </button>
+      <button class="toggle-btn" [class.active]="!isLogin()" (click)="!isLogin() || toggleMode()">
+        Registrarse
+      </button>
+    </div>
+
+    <div class="form-container">
+      <div class="form-track" [class.show-register]="!isLogin()">
+        <form class="form-panel" [formGroup]="loginForm" (ngSubmit)="submit()">
+          <h2>Bienvenido de nuevo</h2>
+          <div class="input-group">
+            <label for="login-email">Correo electrónico</label>
+            <input id="login-email" type="email" formControlName="email" placeholder="correo@ejemplo.com" />
+          </div>
+          <div class="input-group">
+            <label for="login-password">Contraseña</label>
+            <input id="login-password" type="password" formControlName="password" placeholder="••••••••" />
+          </div>
+          <button type="submit" class="submit-btn">Iniciar Sesión</button>
+        </form>
+
+        <div class="form-panel">
+          <app-registro />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
